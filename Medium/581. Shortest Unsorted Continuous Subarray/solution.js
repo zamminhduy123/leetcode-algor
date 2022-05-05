@@ -61,11 +61,13 @@ var findUnsortedSubarray = function(nums) {
     if (l != -1) {
         let min = nums[l], max = nums[l];
         
+	//find min and max
         for (let i = l + 1; i <= r; i++){
             if (nums[i] < min) min = nums[i];
             if (nums[i] > max) max = nums[i];
         }
         
+	//find real breaking point using min and max
         let left = 0, right = nums.length-1;
         
         while (right > left){
